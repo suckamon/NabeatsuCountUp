@@ -30,6 +30,12 @@ struct ContentView: View {
                 .frame(width: 300.0, height: 300.0, alignment: .leading)
                 .clipShape(Circle())
                 .shadow(color: Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2), radius: 20, x: 3, y: 3)
+            Button(action: {
+                self.reset()
+            }) {
+                Text("リセット")
+            }
+            .padding()
         }
     }
     
@@ -42,6 +48,11 @@ struct ContentView: View {
         } else {
             self.imageFileName = "nabeatsu_01"
         }
+    }
+    
+    func reset() {
+        self.cnt = 0
+        self.imageFileName = "nabeatsu_01"
     }
 }
 
